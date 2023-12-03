@@ -18,10 +18,21 @@ pipeline {
 //                 }
 //             }
 //         }
+        // stage('Build Images') {
+        //     steps {
+        //         script {
+        //             sh 'docker build -t gurchetbawa/insider-threat-capstone .'
+        //         }
+        //     }
+        // }
+
         stage('Build Images') {
             steps {
                 script {
-                    sh 'docker build -t gurchetbawa/insider-threat-capstone .'
+                    // Use Docker within a Docker container
+                    withDockerServer([uri: 'tcp://localhost:2375']) {
+                        sh 'docker build -t gurchetbawa/insider-threat-capstone .'
+                    }
                 }
             }
         }
