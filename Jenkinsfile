@@ -11,6 +11,14 @@ pipeline {
             }
         }
 
+        stage('Check Docker Path') {
+            steps {
+                script {
+                    sh 'which docker'
+                }
+            }
+        }
+
 //         stage('Unit Tests') {
 //             steps {
 //                 script {
