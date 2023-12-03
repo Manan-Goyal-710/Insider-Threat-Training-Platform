@@ -18,13 +18,13 @@ pipeline {
 //                 }
 //             }
 //         }
-//         stage('Build Images') {
-//             steps {
-//                 script {
-//                     bat 'docker build -t omgholap/mnist-capstone-new:code .'
-//                 }
-//             }
-//         }
+        stage('Build Images') {
+            steps {
+                script {
+                    bat 'docker build -t gurchetbawa/insider-threat-capstone .'
+                }
+            }
+        }
 
 //         stage('Push Images to Hub') {
 //             steps {
