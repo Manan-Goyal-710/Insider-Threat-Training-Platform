@@ -21,7 +21,7 @@ pipeline {
         stage('Build Images') {
             steps {
                 script {
-                    bat 'docker build -t gurchetbawa/insider-threat-capstone .'
+                    sh 'docker build -t gurchetbawa/insider-threat-capstone .'
                 }
             }
         }
